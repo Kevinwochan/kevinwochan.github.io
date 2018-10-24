@@ -16,7 +16,7 @@
 	<link href="style.css" rel="stylesheet">
   </head>
 
-<body class="text-center" data-spy="scroll" data-target="#nav-menu">
+<body data-spy="scroll" data-target="#nav-menu">
 	<div class="inner">
 		<nav id="nav-menu" class="navbar nav-masthead fixed-top navbar-expand-md">
 			<div class="container">
@@ -27,37 +27,49 @@
 					<a class="nav-link" href="#interests">INTERESTS</a>
 					<a class="nav-link active" href="#skills">SKILLS</a>
 					<a class="nav-link" href="#experience">EXPERIENCE</a>
-					<a class="nav-link" href="#contact">CONTACT</a>
+					<a class="nav-link" href="#cover-footer">CONTACT</a>
 				</div>
 		 </nav>
 	</div>
 </body>
 
- <section id="hero">
-	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-light">
-	  <div class="mx-auto my-5">
-		<h1 class="display-4 font-weight-normal">Kevin Chan<h1>
-		<p class="lead font-weight-normal">Software Developer</p>
-		<p class="lead font-weight-normal">Studying BE Electrical Engineering and BSc Computer Science, looking for oppurtunities in embbedded systems</p>
-		<a class="btn btn-outline-secondary" href="#">Coming soon</a>
-	  </div>
-	</div>
+<section id="cover" class="dark-blue-bg">
+	<div id="inner-cover" class="mx-auto w-70 container">
+		<div class="row align-items-start ">
+			<h1 class="display-4 font-weight-normal">Kevin Chan<h1>
+		</div>
+		<div class="row mt-5 align-items-center ">
+				<p class="lead font-weight-normal">Software Developer</p>
+				<p class="lead font-weight-normal">Studying BE Electrical Engineering and BSc Computer Science, looking for oppurtunities in embbedded systems</p>
+		</div>
+		<div class="row mb-5 mt-3 align-items-center ">
+			<a class="btn btn-outline-light" href="#contact">Contact Me</a>
+		</div>
+		<div id="cover-footer" class="row align-items-end text-center">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4">
+						<a href="mailto:kevinwochan@gmail.com"</a>
+						  <i class="far m-5 fa-3x text-white fa-envelope"></i>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="https://www.linkedin.com/in/kevinwochan/"> 
+						  <i class="fab m-5 fa-3x text-white fa-linkedin-in"></i>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="https://github.com/kevinwochan">
+						  <i class="fab m-5 fa-3x text-white fa-github"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
 </section>
 
-<section id="contact" class="dark-blue-bg">
-	<a href="mailto:kevinwochan@gmail.com"</a>
-	  <i class="far mx-2 fa-2x fa-envelope"></i>
-	</a>
-	<a href="https://www.linkedin.com/in/kevinwochan/"> 
-	  <i class="fab mx-2 fa-2x fa-linkedin-in"></i>
-	</a>
-
-	<a href="https://github.com/kevinwochan">
-	  <i class="fab mx-2 fa-2x fa-github"></i>
-	</a>
-</section>
-
-<section id="skills" >
+<section id="skills" class="no-space-section">
 	<div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
 	  <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
 		<div class="my-3 py-3">
@@ -127,41 +139,7 @@
 	</div>
 </section>
 
-<footer class="container py-5">
-  <div class="row">
-	<div class="col-6 col-md">
-	  <h5>Features</h5>
-	  <ul class="list-unstyled text-small">
-		<li><a class="text-muted" href="#">Cool stuff</a></li>
-		<li><a class="text-muted" href="#">Last time</a></li>
-	  </ul>
-	</div>
-	<div class="col-6 col-md">
-	  <h5>Resources</h5>
-	  <ul class="list-unstyled text-small">
-		<li><a class="text-muted" href="#">Resource</a></li>
-		<li><a class="text-muted" href="#">Final resource</a></li>
-	  </ul>
-	</div>
-	<div class="col-6 col-md">
-	  <h5>Resources</h5>
-	  <ul class="list-unstyled text-small">
-		<li><a class="text-muted" href="#">Business</a></li>
-		<li><a class="text-muted" href="#">Gaming</a></li>
-	  </ul>
-	</div>
-	<div class="col-6 col-md">
-	  <h5>About</h5>
-	  <ul class="list-unstyled text-small">
-		<li><a class="text-muted" href="#">Team</a></li>
-		<li><a class="text-muted" href="#">Locations</a></li>
-		<li><a class="text-muted" href="#">Privacy</a></li>
-		<li><a class="text-muted" href="#">Terms</a></li>
-	  </ul>
-	</div>
-  </div>
-</footer>
-
+<footer>
 		<!-- Icons-->
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">  
 		<!-- Google Fonts-->
@@ -174,6 +152,8 @@
 		<!-- Bootstrap JS + Popper JS-->
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
 		<script src="smoothscroll.js"></script>
+</footer>
+
 </body>
 </html>
 
