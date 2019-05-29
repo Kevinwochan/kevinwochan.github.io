@@ -52,6 +52,9 @@ function modules() {
   // Bootstrap
   var bootstrap = gulp.src('./node_modules/bootstrap/dist/**/*')
     .pipe(gulp.dest('./vendor/bootstrap'));
+  // Popper
+  var popper = gulp.src('./node_modules/popper.js/dist/umd/*.js')
+    .pipe(gulp.dest('./vendor/popper'));
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
     .pipe(gulp.dest('./vendor'));
@@ -64,7 +67,7 @@ function modules() {
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'));
-  return merge(bootstrap, fontAwesome, jquery, jqueryEasing);
+  return merge(bootstrap, popper, fontAwesome, jquery, jqueryEasing);
 }
 
 // CSS task
