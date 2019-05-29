@@ -24,5 +24,10 @@
   $('body').scrollspy({
     target: '#sideNav'
   });
+  
+  //Activate popovers
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
 
 })(jQuery); // End of use strict
