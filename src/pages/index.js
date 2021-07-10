@@ -8,20 +8,24 @@ import styled from 'styled-components';
 const IconButton = styled.a`
   display: inline-block;
   font-size: 3rem;
+  margin-right: 2rem;
+  border-radius: 100%;
 
-a:last-child {
-  margin-right: 0;
-}
+  &:hover {
+    color: transparent;
+    background-color: transparent;
+  }
 
-a:hover {
-  -webkit-box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
-  box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
-  background-color: #2E3440;
-}
+  svg {
+    transition: color 0.5s ease-in-out;
+    color: white;
+  }
 
-svg {
-  transition: color 0.5s ease-in-out
-}
+  &:hover svg {
+    -webkit-box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
+    box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
+    color: #81a1c1;
+  }
 
 `
 const About = () => {

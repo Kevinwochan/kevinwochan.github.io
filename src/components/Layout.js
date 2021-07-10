@@ -7,9 +7,10 @@ import '../pages/resume.css';
 
 const StyledMain = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 54px;
   background-color: #242933;
   color: #D8DEE9;
+  overflow-y: hidden;
+  height: 100vh;
 `;
 
 const StyledNav = styled.nav`
@@ -47,7 +48,6 @@ const Layout = ({ children }) => {
                     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
                     crossOrigin="anonymous"
                 />
-                <link href="https://kevinwochan.com/css/resume.min.css" rel="stylesheet" />
                 <link rel="icon" type="image/jpeg" href="" sizes="16x16" />
             </Helmet>
             <StyledNav className="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
