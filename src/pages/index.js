@@ -1,184 +1,209 @@
-import * as React from "react"
+import React, { useEffect, useState } from 'react'
+import Layout from "../components/Layout"
+import './resume.css';
+import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'gatsby'
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
+const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    axios.get('https://api.github.com/users/kevinwochan/repos').then((response) => {
+      setProjects(response);
+    })
+  }, []);
+  return (
+    <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="projects">
+      <div className="w-100">
+        <h2 className="mb-5">Projects</h2>
+        {/*projects.map((project) => (
+                    <div className="resume-item mb-5">
+                        <div className="resume-item-header d-flex flex-column flex-md-row justify-content-between">
+                            <h3 className="mb-0">{project.name}</h3>
+                        </div>
+                        <div className="resume-content">
+                            {project.description}
+                        </div>
+                    </div>
+                ))*/}
+      </div>
+    </section>
+  );
 }
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
+const Certificates = () => {
+  // TODO: Turn this into a credly collage
+  return (
+    <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="certificates">
+      <div className="w-100">
+        <h2 className="mb-5">Certificates</h2>
+
+        <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div className="resume-content">
+            <h3 className="mb-2">Offensive Security</h3>
+            <div className="subheading mb-0">Certified Professional</div>
+            <div>Offensive Security Certified Professional</div>
+          </div>
+          <div className="resume-date text-md-right">
+            <span className="text-primary">2022</span>
+          </div>
+        </div>
+        <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div className="resume-content">
+            <h3 className="mb-2">Amazon Web Services</h3>
+            <div className="subheading mb-0">Associate Certified</div>
+            <div>Associate Solution Architect - May 2021</div>
+            <div>Associate Developer - June 2021</div>
+            <div>Associate SysOps Administrator - June 2021</div>
+          </div>
+          <div className="resume-date text-md-right">
+            <span className="text-primary">2021</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
 }
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
+const Education = () => {
+  return (
+    <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div className="w-100">
+        <h2 className="mb-5">Education</h2>
+        <div className="resume-item d-flex flex-column flex-md-row justify-content-between mb-1">
+          <div className="resume-content">
+            <h3 className="mb-2">University of New South Wales</h3>
+            <div className="subheading mb-0">Bachelors of Computer Science (Major in Security Engineering)</div>
+            <div>Data Structures and Algorithms</div>
+            <div>Object Oriented Design</div>
+            <div>Web Application Security and Testing</div>
+            <div>Software Security Assessment (binary exploitation)</div>
+            <div>Security Engineering</div>
+            <div>Digital Forensics</div>
+            <div>Codes and Ciphers</div>
+            <div>Computer Networks</div>
+            <div>Databases</div>
+          </div>
+          <div className="resume-date text-md-right">
+            <span className="text-primary">2020</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
+const About = () => {
+  return (
+    <>
+      <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+        <div className="w-100">
+          <h1 className="mb-0">Kevin Chan</h1>
+          <div className="subheading mb-4">
+            Associate Solution Architect at Amazon Web Services · BSc Computer Science at UNSW
+          </div>
+          <div className="lead mb-4"><p className="lead">Cloud</p></div>
+          <div className="subheading icons">
+            <a href="https://linkedin.com/in/kevinwochan/">
+              <FontAwesomeIcon icon={faLinkedin} />
+            </a>
+            <a href="https://github.com/Kevinwochan">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+            <a href="mailto:kevinwochan@gmail.com">
+              <FontAwesomeIcon icon={faEnvelope} />
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }
 
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
+const Experience = () => {
+  return (
+    <section className="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div className="w-100">
+        <h2 className="mb-5">Experience</h2>
+
+        <div className="resume-item mb-5">
+          <div className="resume-item-header d-flex flex-column flex-md-row justify-content-between">
+            <h3 className="mb-0">Software Developer</h3>
+            <div className="resume-date text-md-right">
+              <span className="text-primary">Janurary 2019 - Present</span>
+            </div>
+          </div>
+          <div className="resume-item-content">
+            <div className="subheading mb-3">Ocius Technology</div>
+            <li>Parsed industrial standard map data into a database for autonomous navigation systems using Python and PostgreSQL</li>
+            <li> Migrated existing JavaScript GIS implementation from ArcGIS to OpenLayers with a 3fps to 35fps increase </li>
+          </div>
+        </div>
+
+        <div className="resume-item mb-5">
+          <div className="resume-item-header d-flex flex-column flex-md-row justify-content-between">
+            <h3 className="mb-0">Technology Lead</h3>
+            <div className="resume-date text-md-right">
+              <span className="text-primary">March 2017 - April 2019</span>
+            </div>
+          </div>
+          <div className="resume-item-content">
+            <div className="subheading mb-3">Textbook Ventures</div>
+            <li> Collaborated with a team of 3 developers to build Sydney’s first startup directory handling 400 entries using SQLite</li>
+            <li> Designed 2 event-based websites with Django, Apache, AWS, HTML, CSS, JavaScript for search engine optimization</li>
+            <li> Managed 4 servers’ DNS records, SSL certification and AWS Load balancing for site reliability </li>
+            <li> Built the team’s first website using WordPress CMS achieving 1500 views per month </li>
+          </div>
+        </div>
+
+        <div className="resume-item mb-5">
+          <div className="resume-item-header d-flex flex-column flex-md-row justify-content-between">
+            <h3 className="mb-0">Student Asssitant</h3>
+            <div className="resume-date text-md-right">
+              <span className="text-primary">Feburary 2018 - August 2018</span>
+            </div>
+          </div>
+          <div className="resume-item-content">
+            <div className="subheading mb-3">UNSW Continuing Legal Education</div>
+            <li>Developed a Salesforce database schema containing 12 years of existing data for a new line of products</li>
+            <li>Implemented payment verification using OneStop Payment API, Salesforce and Drupal CMS handling 100’s of monthly sale</li>
+            <li>Automated emails for attendance, invoicing, reminders and registration confirmation to 100’s of customers every month</li>
+          </div>
+        </div>
+
+        <div className="resume-item">
+          <div className="resume-item-header d-flex flex-column flex-md-row justify-content-between">
+            <h3 className="mb-0">WordPress Developer</h3>
+            <div className="resume-date text-md-right">
+              <span className="text-primary">September 2017 - Janurary 2019</span>
+            </div>
+          </div>
+          <div className="resume-item-content">
+            <div className="subheading mb-3">Ocius Technology</div>
+            <li>Redesigned company WordPress CMS theme in PHP, CSS and HTML doubling views per month</li>
+            <li>Customised mass emails keeping 300 subscribers up to date with the latest company news and breakthroughs</li>
+            <li>Consulted directly with CEO to continually customize the website to reflect the rapidly growing company</li>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
 }
-
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-// markup
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
+    <Layout>
+      <About />
+      <Projects />
+      <Experience />
+      <Education />
+      <Certificates />
+    </Layout>
   )
 }
 
-export default IndexPage
+export default IndexPage;
