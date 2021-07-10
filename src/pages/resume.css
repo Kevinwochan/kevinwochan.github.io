@@ -60,33 +60,6 @@ p.lead {
   color: #81A1C1;
 }
 
-.icons a {
-  -webkit-box-shadow: rgba(15, 17, 21, 0.2) 0px 3px 6px 0px;
-  box-shadow: rgba(15, 17, 21, 0.2) 0px 3px 6px 0px;
-  -webkit-transition: background-color 400ms ease-in-out 0s, -webkit-box-shadow 400ms ease-in-out 0s;
-  transition: background-color 400ms ease-in-out 0s, -webkit-box-shadow 400ms ease-in-out 0s;
-  transition: box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s;
-  transition: box-shadow 400ms ease-in-out 0s, background-color 400ms ease-in-out 0s, -webkit-box-shadow 400ms ease-in-out 0s;
-  display: inline-block;
-  height: 3.5rem;
-  width: 3.5rem;
-  border-radius: 100%;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 3.5rem;
-  margin-right: 1rem;
-}
-
-.icons a:last-child {
-  margin-right: 0;
-}
-
-.icons a:hover {
-  -webkit-box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
-  box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
-  background-color: #2E3440;
-}
-
 hr {
   border-color: #2E3440;
 }
