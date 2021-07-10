@@ -2,6 +2,7 @@ import React from 'react';
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import {Helmet} from "react-helmet";
+import favicon from '../images/kevin.jpeg'
 import '../pages/resume.css';
 
 const StyledMain = styled.div`
@@ -27,13 +28,15 @@ const Layout = ({ children }) => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-                <meta name="description" content="Software Developer at Ocius Technology · Studying BEng Electrical and BSc Computer Science at UNSW" />
+
+                <meta name="description" content="Software Engineer with cloud experience, interested in Information Security" />
                 <meta name="author" content="Kevin Chan" />
 
                 <meta property="og:title" content="Kevin Chan" />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://kevinwochan.com/" />
                 <meta property="og:site_name" content="Kevin Chan" />
+                <link rel="icon" href={favicon} />
 
                 <title>Kevin Chan</title>
 
@@ -45,17 +48,8 @@ const Layout = ({ children }) => {
                     crossOrigin="anonymous"
                 />
                 <link href="https://kevinwochan.com/css/resume.min.css" rel="stylesheet" />
+                <link rel="icon" type="image/jpeg" href="" sizes="16x16" />
             </Helmet>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-96773019-2"></script>
-            <script>
-                {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'UA-96773019-2');
-                `}
-            </script>
             <StyledNav className="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
                 <a className="navbar-brand js-scroll-trigger" href="#page-top">
                     <span className="d-block d-lg-none">Kevin Chan</span>
@@ -67,30 +61,12 @@ const Layout = ({ children }) => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#about">About</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#experience">Experience</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#projects">Projects</a>
-                        </li>
-                         <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#education">Education</a>
-                        </li>
-                       <li className="nav-item">
-                            <a className="nav-link js-scroll-trigger" href="#certificates">Certificates</a>
-                        </li>
-                     </ul>
                 </div>
             </StyledNav>
             <StyledMain>
                 {children}
             </StyledMain>
             <footer>
-                <script src="https://kevinwochan.com/js/resume.min.js"></script>
                 <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></script>
 
                 <script
