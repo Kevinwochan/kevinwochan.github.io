@@ -16,14 +16,13 @@ const IconButton = styled.a`
     background-color: transparent;
   }
 
-  svg {
+  & svg {
+    height: 3rem;
     transition: color 0.5s ease-in-out;
     color: white;
   }
 
   &:hover svg {
-    -webkit-box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
-    box-shadow: rgba(15, 17, 21, 0.2) 0px 5px 10px 1px;
     color: #81a1c1;
   }
 
@@ -43,10 +42,10 @@ const About = () => {
           <div className="lead mb-4"><p className="lead">Software Engineer with cloud experience, interested in Information Security</p></div>
           <div className="subheading icons">
             <IconButton href="https://linkedin.com/in/kevinwochan/">
-              <FontAwesomeIcon icon={faLinkedin} size={"lg"}/>
+              <FontAwesomeIcon icon={faLinkedin} size="lg"/>
             </IconButton>
             <IconButton href="https://github.com/Kevinwochan">
-              <FontAwesomeIcon icon={faGithub} size={"lg"}/>
+              <FontAwesomeIcon icon={faGithub} size="lg"/>
             </IconButton>
           </div>
         </div>
