@@ -1,9 +1,11 @@
 import React from 'react';
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import favicon from '../images/kevin.jpeg'
 import '../pages/resume.css';
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const StyledMain = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
@@ -49,12 +51,13 @@ const Layout = ({ children }) => {
                     crossOrigin="anonymous"
                 />
                 <link rel="icon" type="image/jpeg" href="" sizes="16x16" />
+                <style src="@fortawesome/fontawesome-svg-core/styles.css" />
             </Helmet>
             <StyledNav className="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
                 <a className="navbar-brand js-scroll-trigger" href="#page-top">
                     <span className="d-block d-lg-none">Kevin Chan</span>
                     <span className="d-none d-lg-block">
-                        <StaticImage className="img-fluid img-profile rounded-circle mx-auto mb-2" src="../images/kevin.jpeg" alt="" />
+                        <StaticImage className="img-fluid img-profile rounded-circle mx-auto mb-2" src="../images/kevin.jpeg" alt="Kevin Chan" />
                     </span>
                 </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
