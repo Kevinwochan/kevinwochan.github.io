@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from "../components/Layout"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { StaticImage } from "gatsby-plugin-image"
 import './resume.css';
 import styled from 'styled-components';
 
@@ -27,11 +28,13 @@ const IconButton = styled.a`
   }
 
 `
+
 const About = () => {
   return (
     <>
       <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
         <div className="w-100">
+          <StaticImage className="img-fluid img-profile rounded-circle mx-auto mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan"/>
           <h1 className="mb-0">Kevin Chan</h1>
           <div className="subheading mb-1">
             Associate Cloud Architect at Amazon Web Services

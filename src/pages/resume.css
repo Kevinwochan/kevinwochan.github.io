@@ -9,6 +9,7 @@ body {
   padding-top: 54px;
   background-color: #242933;
   color: #D8DEE9;
+  padding: 0;
 }
 
 @media (min-width: 992px) {
@@ -64,6 +65,10 @@ hr {
   border-color: #2E3440;
 }
 
+#sideNav {
+  display: none;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
@@ -72,6 +77,10 @@ hr {
 
 #sideNav .navbar-toggler:focus {
   outline-color: white;
+}
+
+.img-profile {
+  border: 0.5rem solid rgba(229, 233, 240, 0.2);
 }
 
 @media (min-width: 992px) {
@@ -97,11 +106,7 @@ hr {
     margin: auto auto 0;
     padding: 0.5rem;
   }
-  #sideNav .navbar-brand .img-profile {
-    max-width: 10rem;
-    max-height: 10rem;
-    border: 0.5rem solid rgba(229, 233, 240, 0.2);
-  }
+  
   #sideNav .navbar-collapse {
     display: -webkit-box;
     display: -ms-flexbox;
