@@ -26,32 +26,41 @@ const IconButton = styled.a`
   &:hover svg {
     color: #81a1c1;
   }
-
 `
+
+const FullHeightRow = styled.div`
+  overflow-y: hidden;
+  height: 100vh;
+`;
 
 const About = () => {
   return (
     <>
-      <section className="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-        <div className="w-100">
-          <StaticImage className="img-fluid img-profile rounded-circle mx-auto mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan"/>
-          <h1 className="mb-0">Kevin Chan</h1>
-          <div className="subheading mb-1">
-            Associate Cloud Architect at Amazon Web Services
+      <section className="resume-section container">
+        <FullHeightRow className="row align-items-center justify-content-center">
+          <div className="d-none d-lg-block">
+            <StaticImage className="img-fluid img-profile rounded-circle" src="../images/kevin.jpeg" alt="Kevin Chan" />
           </div>
-          <div className="mb-4">
-            BSc Computer Science (Major in Security Engineering)
+          <div className="p-5">
+            <StaticImage className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan" />
+            <h1 className="mb-0">Kevin Chan</h1>
+            <div className="subheading mb-1">
+              Associate Cloud Architect at Amazon Web Services
+            </div>
+            <div className="mb-4">
+              BSc Computer Science (Major in Security Engineering)
+            </div>
+            <div className="lead mb-4"><p className="lead">Software Engineer with cloud experience, interested in Information Security</p></div>
+            <div className="subheading icons ml-1">
+              <IconButton href="https://linkedin.com/in/kevinwochan/">
+                <FontAwesomeIcon icon={faLinkedin} size="lg" />
+              </IconButton>
+              <IconButton href="https://github.com/Kevinwochan">
+                <FontAwesomeIcon icon={faGithub} size="lg" />
+              </IconButton>
+            </div>
           </div>
-          <div className="lead mb-4"><p className="lead">Software Engineer with cloud experience, interested in Information Security</p></div>
-          <div className="subheading icons">
-            <IconButton href="https://linkedin.com/in/kevinwochan/">
-              <FontAwesomeIcon icon={faLinkedin} size="lg"/>
-            </IconButton>
-            <IconButton href="https://github.com/Kevinwochan">
-              <FontAwesomeIcon icon={faGithub} size="lg"/>
-            </IconButton>
-          </div>
-        </div>
+        </FullHeightRow>
       </section>
     </>
   );

@@ -11,8 +11,6 @@ const StyledMain = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #242933;
   color: #D8DEE9;
-  overflow-y: hidden;
-  height: 100vh;
 `;
 
 const StyledNav = styled.nav`
@@ -53,19 +51,6 @@ const Layout = ({ children }) => {
                 <link rel="icon" type="image/jpeg" href="" sizes="16x16" />
                 <style src="@fortawesome/fontawesome-svg-core/styles.css" />
             </Helmet>
-            <StyledNav className="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
-                <div className="navbar-brand">
-                    <span className="d-none d-lg-block">
-                        <StaticImage className="img-fluid img-profile rounded-circle mx-auto mb-2" src="../images/kevin.jpeg" alt="Kevin Chan"
-                        />
-                    </span>
-                </div>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                </div>
-            </StyledNav>
             <StyledMain>
                 {children}
             </StyledMain>
