@@ -1,11 +1,11 @@
 import React from 'react';
-import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components'
 import { Helmet } from "react-helmet";
 import favicon from '../images/kevin.jpeg'
+import '../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css'
+import '../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css'
+import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 import '../pages/resume.css';
-import { config } from "@fortawesome/fontawesome-svg-core";
-config.autoAddCss = false;
 
 const StyledMain = styled.div`
   font-family: 'Source Sans Pro', sans-serif;
@@ -42,13 +42,6 @@ const Layout = ({ children }) => {
                 <title>Kevin Chan</title>
 
                 <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Julius+Sans+One|SourceSans+Pro&display=swap" rel="stylesheet" />
-                <link
-                    rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-                    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-                    crossOrigin="anonymous"
-                />
-                <link rel="icon" type="image/jpeg" href="" sizes="16x16" />
             </Helmet>
             <StyledMain>
                 {children}

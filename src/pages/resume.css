@@ -25,19 +25,6 @@ h6 {
   color: #ECEFF4;
 }
 
-h1 {
-  font-size: 6rem;
-  line-height: 5.5rem;
-}
-
-h2 {
-  font-size: 3.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
 p.lead {
   font-size: 1.15rem;
   font-weight: 400;
@@ -71,6 +58,7 @@ hr {
 
 .img-profile {
   border: 0.2rem solid rgba(229, 233, 240, 0.2);
+  border-radius: 50%;
 }
 
 section.resume-section .resume-item .resume-date {
