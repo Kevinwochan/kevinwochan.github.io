@@ -7,6 +7,7 @@ frontend:
     build:
       commands:
         - gatsby build
+        - npm run preload-fonts -- --no-sandbox
   artifacts:
     baseDirectory: public
     files:
