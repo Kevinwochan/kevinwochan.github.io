@@ -49,22 +49,11 @@ const Layout = ({ children }) => {
                     crossOrigin="anonymous"
                 />
                 <link rel="icon" type="image/jpeg" href="" sizes="16x16" />
-                <style src="@fortawesome/fontawesome-svg-core/styles.css" />
             </Helmet>
             <StyledMain>
                 {children}
             </StyledMain>
             <footer>
-                <script src="https://unpkg.com/react/umd/react.production.min.js" crossOrigin></script>
-
-                <script
-                    src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-                    crossOrigin></script>
-
-                <script
-                    src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-                    crossOrigin></script>
-
             </footer>
         </>
     );
