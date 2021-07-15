@@ -25,35 +25,18 @@ const FullHeightRow = styled.div`
   height: 100vh;
 `;
 
-const RAINBOW = `
-linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 1) 0%,
-        rgba(255, 154, 0, 1) 10%,
-        rgba(208, 222, 33, 1) 20%,
-        rgba(79, 220, 74, 1) 30%,
-        rgba(63, 218, 216, 1) 40%,
-        rgba(47, 201, 226, 1) 50%,
-        rgba(28, 127, 238, 1) 60%,
-        rgba(95, 21, 242, 1) 70%,
-        rgba(186, 12, 248, 1) 80%,
-        rgba(251, 7, 217, 1) 90%,
-        rgba(255, 0, 0, 1) 100%
-    )
-`
-
 const About = () => {
   const [msg, setMsg] = useState(null);
   setTimeout(() => {
-    setMsg("Pssst! You're still here? Why?");
-  }, 10000);
+    setMsg("Pssst! You're still here?");
+  }, 20000);
 
   return (
     <section className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
         <div className="d-none d-lg-block d-flex-item text-end">
           <StaticImage className="img-fluid img-profile rounded-circle" src="../images/kevin.jpeg" alt="Kevin Chan" />
-          {msg && (<h2>{msg}</h2>)}
+          {msg && (<h2 className="mt-2">{msg}</h2>)}
         </div>
         <div className="p-5 d-flex-item">
           <StaticImage className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan" />
@@ -68,10 +51,10 @@ const About = () => {
             Software Engineer with cloud experience, interested in Information Security</p></div>
           <div className="subheading icons ml-1">
             <IconButton href="https://linkedin.com/in/kevinwochan/">
-              <i className="bi bi-linkedin" />
+              <i className="bi bi-linkedin" onClick={() => { setMsg('Talk to you soon....') }} />
             </IconButton>
             <IconButton href="https://github.com/Kevinwochan">
-              <i className="bi bi-github" />
+              <i className="bi bi-github"/>
             </IconButton>
           </div>
         </div>

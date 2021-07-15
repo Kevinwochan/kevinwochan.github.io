@@ -12,16 +12,6 @@ const StyledMain = styled.div`
   color: #D8DEE9;
 `;
 
-const StyledNav = styled.nav`
-  font-weight: 800;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-  background-color: #242933;
-  .navbar-toggler:focus {
-    outline-color: white;
-  }
-`;
-
 const Layout = ({ children }) => {
     return (
         <>
