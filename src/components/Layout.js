@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import { Helmet } from "react-helmet";
 import favicon from '../images/kevin.jpeg'
-import '../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css'
-import '../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css'
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../node_modules/bootstrap-icons/font/bootstrap-icons.css'
 import '../pages/resume.css';
 
