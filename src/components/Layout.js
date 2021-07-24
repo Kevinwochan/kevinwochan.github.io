@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
 
                 <title>Kevin Chan</title>
 
-                <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Julius+Sans+One|SourceSans+Pro&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Julius+Sans+One|VT323&display=swap" rel="stylesheet" />
             </Helmet>
             <StyledMain>
                 {children}

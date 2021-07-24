@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
+import Typist from 'react-typist';
+import '../../node_modules/react-typist/dist/Typist.css'
 
 const IconButton = styled.a`
   display: inline-block;
@@ -47,14 +49,19 @@ const About = () => {
           <div className="mb-4">
             BSc Computer Science (Major in Security Engineering)
           </div>
-          <div className="lead mb-4"><p className="lead">
-            Software Engineer with cloud experience, interested in Information Security</p></div>
+          <div className="lead mb-4">
+            <p className="lead">
+              <Typist>
+                Software Engineer with cloud experience, interested in Information Security
+              </Typist>
+            </p>
+          </div>
           <div className="subheading icons ml-1">
             <IconButton href="https://linkedin.com/in/kevinwochan/">
               <i className="bi bi-linkedin" onClick={() => { setMsg('Talk to you soon....') }} />
             </IconButton>
             <IconButton href="https://github.com/Kevinwochan">
-              <i className="bi bi-github"/>
+              <i className="bi bi-github" />
             </IconButton>
           </div>
         </div>
