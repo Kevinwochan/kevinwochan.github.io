@@ -31,7 +31,7 @@ const About = () => {
   const [msg, setMsg] = useState(null);
   setTimeout(() => {
     setMsg("Pssst! You're still here?");
-  }, 20000);
+  }, 30000);
 
   return (
     <section className="resume-section container">
