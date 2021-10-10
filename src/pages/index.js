@@ -52,7 +52,7 @@ const About = () => {
           <div className="lead mb-4">
             <p className="lead">
               <Typist>
-                Software Engineer with cloud experience, interested in Information Security
+                Software Engineer with cloud experience, interested in information security.
               </Typist>
             </p>
           </div>
