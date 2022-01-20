@@ -44,7 +44,7 @@ const About = () => {
           <StaticImage className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan" />
           <h1 className="mb-0">Kevin Chan</h1>
           <div className="subheading mb-1">
-            Associate Solution Architect at Amazon Web Services
+            Solutions Architect (ISV) at Amazon Web Services
           </div>
           <div className="mb-4">
             BSc Computer Science (Major in Security Engineering)
@@ -52,7 +52,7 @@ const About = () => {
           <div className="lead mb-4">
             <p className="lead">
               <Typist>
-                Software Engineer with cloud experience, interested in Information Security
+                Software Engineer with cloud experience, interested in information security.
               </Typist>
             </p>
           </div>
