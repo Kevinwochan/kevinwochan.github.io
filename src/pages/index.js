@@ -41,7 +41,9 @@ const About = () => {
           {msg && (<h2 className="mt-2">{msg}</h2>)}
         </div>
         <div className="p-5 d-flex-item">
-          <StaticImage className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan" />
+          <StaticImage className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan"
+            height={500}
+          />
           <h1 className="mb-0">Kevin Chan</h1>
           <div className="subheading mb-1">
             Solutions Architect (ISV) at Amazon Web Services
@@ -52,7 +54,7 @@ const About = () => {
           <div className="lead mb-4">
             <p className="lead">
               <Typist>
-                Software Engineer with cloud experience, interested in information security.
+                Software Engineer interested in information security and software architectures.
               </Typist>
             </p>
           </div>
