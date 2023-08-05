@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
-import Typist from 'react-typist';
-import '../../node_modules/react-typist/dist/Typist.css'
+import { TypeAnimation } from 'react-type-animation';
 
 const IconButton = styled.a`
   display: inline-block;
@@ -37,12 +36,16 @@ const About = () => {
     <section className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
         <div className="d-none d-lg-block d-flex-item text-end">
-          <StaticImage className="img-fluid img-profile rounded-circle" src="../images/kevin.jpeg" alt="Kevin Chan" />
+          <StaticImage className="img-fluid img-profile rounded-circle" src="../images/kevin.jpeg" alt="Kevin Chan"
+            height={200}
+            width={200}
+           />
           {msg && (<h2 className="mt-2">{msg}</h2>)}
         </div>
         <div className="p-5 d-flex-item">
           <StaticImage className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan"
-            height={500}
+            height={200}
+            width={200}
           />
           <h1 className="mb-0">Kevin Chan</h1>
           <div className="subheading mb-1">
@@ -53,9 +56,11 @@ const About = () => {
           </div>
           <div className="lead mb-4">
             <p className="lead">
-              <Typist>
-                Software Engineer interested in information security and software architectures.
-              </Typist>
+              <TypeAnimation
+                sequence={[
+                  "Software Engineer interested in information security and software architectures."
+                ]}
+              />
             </p>
           </div>
           <div className="subheading icons ml-1">
