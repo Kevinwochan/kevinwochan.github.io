@@ -37,11 +37,11 @@ const About = () => {
     <section className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
         <div className="d-none d-lg-block d-flex-item text-end">
-          <StaticImage height={200} wdith={200} className="img-fluid img-profile rounded-circle" src="../images/kevin.jpeg" alt="Kevin Chan" />
+          <StaticImage layout="fixed" height={200} width={200} className="img-fluid img-profile rounded-circle" src="../images/kevin.jpeg" alt="Kevin Chan" />
           {msg && (<h2 className="mt-2">{msg}</h2>)}
         </div>
         <div className="p-5 d-flex-item">
-          <StaticImage width={200} height={200} className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan"
+          <StaticImage layout="fixed" height={200} width={200} className="img-fluid img-profile rounded-circle mb-2 d-lg-none" src="../images/kevin.jpeg" alt="Kevin Chan"
           />
           <h1 className="mb-0">Kevin Chan</h1>
           <div className="subheading mb-1">
