@@ -7,7 +7,7 @@ frontend:
         - npm ci --legacy-peer-deps  
     build:
       commands:
-        - gatsby build
+        - npx gatsby build
   artifacts:
     baseDirectory: public
     files:
