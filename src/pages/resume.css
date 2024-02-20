@@ -23,7 +23,7 @@ h6 {
   font-family: 'Julius Sans One';
   text-transform: uppercase;
   color: #FFFFFF;
-  text-shadow: 1px 1px rgba(0,0,0, 0.1);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 p.lead {
@@ -82,21 +82,33 @@ a {
   color: #81A1C1;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   color: #88C0D0;
 }
 
 
 @keyframes AnimateSplash {
   0% {
-    background-position: 0% 10%; }
+    background-position: 0% 10%;
+  }
+
   50% {
-    background-position: 50% 50%; }
+    background-position: 50% 50%;
+  }
+
   100% {
-    background-position: 0% 10%; }
+    background-position: 0% 10%;
+  }
 }
 
 .bright {
   animation: AnimateSplash 1.5s ease infinite;
   background-image: linear-gradient(135deg, rgb(163, 211, 238), rgb(214, 162, 197));
+}
+
+
+.image-gallery {
+  max-width: 70%;
 }

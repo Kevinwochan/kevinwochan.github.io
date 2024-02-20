@@ -71,6 +71,14 @@ const About = () => {
   );
 }
 
+const Events = () => {
+  <section className="resume-section container">
+    <FullHeightRow className="d-flex align-items-center justify-content-center">
+      <h1 className="mb-0">Events</h1>
+    </FullHeightRow>
+  </section>
+}
+
 
 const IndexPage = () => {
   return (
