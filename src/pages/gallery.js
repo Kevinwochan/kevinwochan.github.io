@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from "../components/Layout"
 import styled from 'styled-components';
 import '../../node_modules/react-image-gallery/styles/css/image-gallery.css';
@@ -11,7 +11,14 @@ const FullHeightRow = styled.div`
   height: 100vh;
 `;
 
-const Gallery = ({ slide }) => {
+// https://www.gatsbyjs.com/docs/location-data-from-props/
+const IndexPage = ({ location }) => {
+  const [slide, setSlide] = useState();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location?.search);
+    setSlide(Number(params.get('slide')));
+  }, [])
   const data = useStaticQuery(graphql`
     query MyQuery {
       allFile(filter: {relativeDirectory: {eq: "events"}}) {
@@ -25,25 +32,17 @@ const Gallery = ({ slide }) => {
 `)
 
   const images = data.allFile.edges
+    .sort((a, b) => a.node.publicURL - b.node.publicURL)
     .filter(p => p.node.publicURL)
     .map(p => ({ original: p.node.publicURL, thumbnail: p.node.publicURL }));
 
   return (
-    <section className="resume-section container">
-      <FullHeightRow className="d-flex align-items-center justify-content-center">
-        <ImageGallery items={images} startIndex={slide || 0} />
-      </FullHeightRow>
-    </section>
-  );
-}
-
-
-// https://www.gatsbyjs.com/docs/location-data-from-props/
-const IndexPage = ({ location }) => {
-  const { slide } = new URLSearchParams(location?.search);
-  return (
     <Layout>
-      <Gallery slide={slide} />
+      <section className="resume-section container">
+        <FullHeightRow className="d-flex align-items-center justify-content-center">
+          <ImageGallery items={images} startIndex={slide} />
+        </FullHeightRow>
+      </section>
     </Layout>
   )
 }
