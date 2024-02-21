@@ -23,7 +23,7 @@ const Gallery = () => {
       }
     }
 `)
-  const params = new URLSearchParams(window.location.search);
+  let params = new URLSearchParams(window?.location?.search || '');
   const images = [
     ...data.allFile.edges.filter(p => p.node.publicURL).map(p => ({ original: p.node.publicURL, thumbnail: p.node.publicURL }))
   ];
