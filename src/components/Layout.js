@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://kevinwochan.com/" />
                 <meta property="og:site_name" content="Kevin Chan" />
-                <link rel="icon" href={favicon} />
+                <link rel="icon" type="image/jpeg" href={favicon} />
 
                 <title>Kevin Chan</title>
 
