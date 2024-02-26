@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 
 const FullHeightRow = styled.div`
-  overflow-y: hidden;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const Presentations = () => (
