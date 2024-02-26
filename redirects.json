@@ -36,7 +36,7 @@
         "condition": null
     },
     {
-        "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json|webp)$)([^.]+$)/>",
+        "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|jpeg|js|png|txt|svg|woff|ttf|map|json|webp)$)([^.]+$)/>",
         "target": "/index.html",
         "status": "200",
         "condition": null
