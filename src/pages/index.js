@@ -26,7 +26,7 @@ const IconButton = styled.a`
 
 const FullHeightRow = styled.div`
   overflow-y: hidden;
-  height: 100vh;
+  height: 90vh;
 `;
 
 const About = () => {
@@ -69,6 +69,7 @@ const About = () => {
           </div>
         </div>
       </FullHeightRow>
+      <i class="bi bi-arrow-down-short h1 position-absolute" style={{ bottom: '0', left: '50%', animation: "down 2s infinite", fontSize: "4rem" }} />
     </section>
   );
 }

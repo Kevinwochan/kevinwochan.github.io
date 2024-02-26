@@ -114,3 +114,17 @@ a:active {
   margin: auto;
   max-height: 80vh;
 }
+
+@keyframes down {
+  0% {
+    margin-bottom: 0;
+  }
+
+  50% {
+    margin-bottom: 1%;
+  }
+
+  100% {
+    margin-bottom: 0;
+  }
+}
