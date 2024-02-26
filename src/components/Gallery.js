@@ -6,7 +6,6 @@ import ImageGallery from "react-image-gallery";
 
 
 const FullHeightRow = styled.div`
-  overflow-y: hidden;
   height: 100vh;
 `;
 
@@ -38,7 +37,9 @@ export const Gallery = ({ location }) => {
   return (
     <section className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
-        <ImageGallery items={images} startIndex={slide} />
+        <div style={{ maxHeight: '80vh' }}>
+          <ImageGallery items={images} startIndex={slide} />
+        </div>
       </FullHeightRow>
     </section>
   )
