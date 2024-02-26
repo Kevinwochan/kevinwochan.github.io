@@ -111,4 +111,6 @@ a:active {
 
 .image-gallery {
   max-width: 70%;
+  margin: auto;
+  max-height: 80vh;
 }
