@@ -1,0 +1,44 @@
+[
+    {
+        "source": "https://kevinwochan.com",
+        "target": "https://www.kevinwochan.com",
+        "status": "302",
+        "condition": null
+    },
+    {
+        "source": "/gallery",
+        "target": "/gallery/index.html",
+        "status": "200",
+        "condition": null
+    },
+    {
+        "source": "/gallery/",
+        "target": "/gallery/index.html",
+        "status": "200",
+        "condition": null
+    },
+    {
+        "source": "/presentations",
+        "target": "/presentations/index.html",
+        "status": "200",
+        "condition": null
+    },
+    {
+        "source": "/presentations/",
+        "target": "/presentations/index.html",
+        "status": "200",
+        "condition": null
+    },
+    {
+        "source": "/<*>",
+        "target": "/index.html",
+        "status": "404-200",
+        "condition": null
+    },
+    {
+        "source": "</^[^.]+$|\\.(?!(css|gif|ico|jpg|js|png|txt|svg|woff|ttf|map|json|webp)$)([^.]+$)/>",
+        "target": "/index.html",
+        "status": "200",
+        "condition": null
+    }
+]

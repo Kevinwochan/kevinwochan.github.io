@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import styled from 'styled-components';
 import Typist from 'react-typist';
 import '../../node_modules/react-typist/dist/Typist.css'
+import { Presentations } from '../components/Presentations';
+import { Gallery } from '../components/Gallery';
 
 const IconButton = styled.a`
   display: inline-block;
@@ -84,6 +86,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <About />
+      <Gallery />
+      <Presentations />
     </Layout>
   )
 }
