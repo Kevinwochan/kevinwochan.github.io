@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import styled from "styled-components";
+import React from "react";
 import Typist from "react-typist";
+import styled from "styled-components";
 import "../../node_modules/react-typist/dist/Typist.css";
-import { Presentations } from "../components/Presentations";
-import Layout from "../components/Layout";
 import { Gallery } from "../components/Gallery";
+import Layout from "../components/Layout";
+import { Presentations } from "../components/Presentations";
 
 const IconButton = styled.a`
   display: inline-block;
@@ -31,7 +31,6 @@ const FullHeightRow = styled.div`
 `;
 
 const About = () => {
-  const [msg, setMsg] = useState("");
   const data = useStaticQuery(graphql`
     query badges {
       allFile(filter: { relativeDirectory: { eq: "badges" } }) {
@@ -49,12 +48,6 @@ const About = () => {
     .filter((p) => p.node.publicURL)
     .map((p) => p.node.publicURL);
 
-  console.log(badgeUrls);
-
-  setTimeout(() => {
-    setMsg("Pssst! You're still here?");
-  }, 30000);
-
   return (
     <section className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
@@ -71,9 +64,6 @@ const About = () => {
             <IconButton href="https://linkedin.com/in/kevinwochan/">
               <i
                 className="bi bi-linkedin"
-                onClick={() => {
-                  setMsg("Talk to you soon....");
-                }}
               />
             </IconButton>
             <IconButton href="https://github.com/Kevinwochan">
@@ -92,18 +82,24 @@ const About = () => {
           />
           <h1 className="mb-0">Kevin Chan</h1>
           <div className="subheading mb-1">
-            Solutions Architect (ISV) at Amazon Web Services
-          </div>
-          <div className="mb-4">
-            BSc Computer Science (Major in Security Engineering)
+            Solutions Architect for software businesses at Amazon Web Services
           </div>
           <div className="lead mb-4">
-            <p className="lead">
+            <p>
               <Typist>
-                Software Engineer interested in information security and
-                software architectures.
+              An engineer with a passion for software and security.
+              <Typist.Backspace count={53} delay={5000} />
+              Builder on weekdays, HackTheBox on weekends
+              <Typist.Backspace count={43} delay={5000} />
+              “Work Hard, have fun, make history” - Jeff Bezos
+              <Typist.Backspace count={48} delay={5000} />
+              "Kevin is a genius of his generation" - Albert Einstein probably
+              <Typist.Backspace count={64} delay={5000} />
+              “Kindness Makes the World Go Round” - Sesame Street
+              <Typist.Backspace count={51} delay={5000} />
+              “Don't cling to things because everything is impermanent.”― Tuesdays with Morrie
               </Typist>
-            </p>
+              </p>
           </div>
           <div className="subheading icons ml-1">
             {badgeUrls.map((url) => (
@@ -114,8 +110,6 @@ const About = () => {
               />
             ))}
           </div>
-
-          {msg && <Typist> {msg} </Typist>}
         </div>
       </FullHeightRow>
       <i
