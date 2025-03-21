@@ -1,12 +1,5 @@
-import React, { useState } from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { useState } from "react";
 import styled from "styled-components";
-import Typist from "react-typist";
-import "../../node_modules/react-typist/dist/Typist.css";
-import { Presentations } from "../components/Presentations";
-import Layout from "../components/Layout";
-import { Gallery } from "../components/Gallery";
 
 const IconButton = styled.a`
   display: inline-block;
@@ -32,24 +25,12 @@ const FullHeightRow = styled.div`
 
 const About = () => {
   const [msg, setMsg] = useState("");
-  const data = useStaticQuery(graphql`
-    query badges {
-      allFile(filter: { relativeDirectory: { eq: "badges" } }) {
-        edges {
-          node {
-            publicURL
-          }
-        }
-      }
-    }
-  `);
 
-  const badgeUrls = data.allFile.edges
-    .sort((a, b) => a.node.publicURL - b.node.publicURL)
-    .filter((p) => p.node.publicURL)
-    .map((p) => p.node.publicURL);
-
-  console.log(badgeUrls);
+  const badgeUrls = [
+    "./badges/CKA.png",
+    "./badges/DevOpsPro.png",
+    "./badges/SAPro.png",
+  ];
 
   setTimeout(() => {
     setMsg("Pssst! You're still here?");
@@ -59,12 +40,12 @@ const About = () => {
     <section className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
         <div className="d-none d-lg-block d-flex-item">
-          <StaticImage
-            layout="fixed"
-            height={200}
-            width={200}
+          <img
+            style={{
+              height: 200,
+            }}
             className="img-fluid img-profile rounded-circle"
-            src="../images/kevin.jpeg"
+            src="../kevin.jpeg"
             alt="Kevin Chan"
           />
           <div className="subheading icons text-left my-3">
@@ -82,12 +63,12 @@ const About = () => {
           </div>
         </div>
         <div className="p-5 d-flex-item">
-          <StaticImage
-            layout="fixed"
-            height={200}
-            width={200}
+          <img
+            style={{
+              height: 200,
+            }}
             className="img-fluid img-profile rounded-circle mb-2 d-lg-none"
-            src="../images/kevin.jpeg"
+            src="../kevin.jpeg"
             alt="Kevin Chan"
           />
           <h1 className="mb-0">Kevin Chan</h1>
@@ -99,10 +80,8 @@ const About = () => {
           </div>
           <div className="lead mb-4">
             <p className="lead">
-              <Typist>
-                Software Engineer interested in information security and
-                software architectures.
-              </Typist>
+              Software Engineer interested in information security and software
+              architectures.
             </p>
           </div>
           <div className="subheading icons ml-1">
@@ -115,11 +94,11 @@ const About = () => {
             ))}
           </div>
 
-          {msg && <Typist> {msg} </Typist>}
+          {msg}
         </div>
       </FullHeightRow>
       <i
-        class="bi bi-arrow-down-short h1 position-absolute"
+        className="bi bi-arrow-down-short h1 position-absolute"
         style={{
           bottom: "0",
           left: "50%",
@@ -131,22 +110,4 @@ const About = () => {
   );
 };
 
-const Events = () => {
-  <section className="resume-section container">
-    <FullHeightRow className="d-flex align-items-center justify-content-center">
-      <h1 className="mb-0">Events</h1>
-    </FullHeightRow>
-  </section>;
-};
-
-const IndexPage = () => {
-  return (
-    <Layout>
-      <About />
-      <Gallery />
-      <Presentations />
-    </Layout>
-  );
-};
-
-export default IndexPage;
+export default About;
