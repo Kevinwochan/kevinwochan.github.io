@@ -5,8 +5,9 @@ import { VitePluginRadar } from 'vite-plugin-radar';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),
-  VitePluginRadar({ analytics: { id: "G-0SDL9ZF6SC" } })
+  plugins: [
+    react(),
+    VitePluginRadar({ analytics: { id: "G-0SDL9ZF6SC" } })
   ],
   resolve: {
     alias: {
