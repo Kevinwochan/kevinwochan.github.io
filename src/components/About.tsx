@@ -62,6 +62,11 @@ const About = () => {
       alt: "Terraform Associate",
       cert: "https://www.credly.com/badges/e539092d-af1c-497d-aeb9-2ef83daaaa0e/public_url",
     },
+    {
+      img: "./badges/BasicQuantum.png",
+      alt: "Basic Quantum Computing",
+      cert: "https://www.credly.com/badges/9c9147f1-a391-44fa-97b5-c54cd034fd78/public_url",
+    },
   ];
 
   setTimeout(() => {
