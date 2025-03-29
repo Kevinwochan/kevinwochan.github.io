@@ -108,7 +108,8 @@ const About = () => {
             Solutions Architect (ISV) at Amazon Web Services
           </div>
           <div className="mb-4">
-            BSc Computer Science (Major in Security Engineering)
+            BSc Computer Science (Major in Security Engineering) - The
+            University of New South Wales
           </div>
           <div className="lead mb-4">
             <p className="lead">
