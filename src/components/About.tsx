@@ -26,10 +26,42 @@ const FullHeightRow = styled.div`
 const About = () => {
   const [msg, setMsg] = useState("");
 
-  const badgeUrls = [
-    "./badges/CKA.png",
-    "./badges/DevOpsPro.png",
-    "./badges/SAPro.png",
+  const badges = [
+    {
+      img: "./badges/OSCP.png",
+      alt: "Offensive Security Certified Professional",
+      cert: "",
+    },
+    {
+      img: "./badges/CKA.png",
+      alt: "Certified Kubernetes Administrator",
+      cert: "https://www.credly.com/badges/bf12994e-b91b-41ff-a677-c97566a538d4/public_url",
+    },
+    {
+      img: "./badges/SAPro.png",
+      alt: "Security Architect Professional",
+      cert: "https://cp.certmetrics.com/amazon/en/public/verify/credential/EWJ9MHNLDJVQQ4SG",
+    },
+    {
+      img: "./badges/SecSpec.png",
+      alt: "AWS Security Specialist",
+      cert: "https://cp.certmetrics.com/amazon/en/public/verify/credential/c2cf219a44ad4009898dc4f365543274",
+    },
+    {
+      img: "./badges/DiveAdv.png",
+      alt: "Advanced Diver",
+      cert: "https://learn.diveisc.com/ISC/Find_My_Certification.asp",
+    },
+    {
+      img: "./badges/DiveNitrox.png",
+      alt: "Nitrox Diver",
+      cert: "https://learn.diveisc.com/ISC/Find_My_Certification.asp",
+    },
+    {
+      img: "./badges/TerraAss.png",
+      alt: "Terraform Associate",
+      cert: "https://www.credly.com/badges/e539092d-af1c-497d-aeb9-2ef83daaaa0e/public_url",
+    },
   ];
 
   setTimeout(() => {
@@ -85,12 +117,15 @@ const About = () => {
             </p>
           </div>
           <div className="subheading icons ml-1">
-            {badgeUrls.map((url) => (
-              <img
-                src={url}
-                className="m-2"
-                style={{ maxWidth: "20vw", maxHeight: "10vh" }}
-              />
+            {badges.map((badge) => (
+              <a href={badge.cert}>
+                <img
+                  src={badge.img}
+                  alt={badge.alt}
+                  className="m-2"
+                  style={{ maxWidth: "20vw", maxHeight: "10vh" }}
+                />
+              </a>
             ))}
           </div>
 
