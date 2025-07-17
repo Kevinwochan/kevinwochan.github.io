@@ -118,8 +118,10 @@ const About = () => {
           </div>
           <div className="lead mb-4">
             <p className="lead">
-              Software Engineer interested in information security and software
-              architectures.
+              A builder, tinkerer and engineer at heart.
+            </p>
+            <p className="lead">
+              With a passion for information security and software architecture.
             </p>
           </div>
           <div className="subheading icons ml-1">
