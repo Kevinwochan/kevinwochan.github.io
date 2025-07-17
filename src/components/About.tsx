@@ -75,7 +75,7 @@ const About = () => {
 
   return (
     <section className="resume-section container">
-      <FullHeightRow className="d-flex align-items-center justify-content-center">
+      <FullHeightRow className="d-md-flex align-items-center justify-content-center">
         <div className="d-none d-lg-block d-flex-item">
           <img
             style={{
