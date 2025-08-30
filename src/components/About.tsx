@@ -20,7 +20,7 @@ const IconButton = styled.a`
 
 const FullHeightRow = styled.div`
   overflow-y: hidden;
-  height: 90vh;
+  min-height: 90vh;
 `;
 
 const About = () => {
