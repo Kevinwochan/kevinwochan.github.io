@@ -28,11 +28,6 @@ const About = () => {
 
   const badges = [
     {
-      img: "./badges/OSCP.png",
-      alt: "Offensive Security Certified Professional",
-      cert: "",
-    },
-    {
       img: "./badges/CKA.png",
       alt: "Certified Kubernetes Administrator",
       cert: "https://www.credly.com/badges/bf12994e-b91b-41ff-a677-c97566a538d4/public_url",
