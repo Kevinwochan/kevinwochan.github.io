@@ -41,7 +41,7 @@ const TALKS = [
 export const Presentations = () => (
   <section id="talks" className="resume-section container">
     <FullHeightRow className="d-flex flex-column justify-content-center row text-center section-inner">
-      <h1 className="flex-item">Previous Talks</h1>
+      <h1 className="flex-item section-title">Previous Talks</h1>
       <div className="row flex-item">
         {TALKS.map(talk => (
           <div className="col-sm-12 col-md-6 talk-card">
