@@ -9,6 +9,13 @@ export default defineConfig({
     react(),
     VitePluginRadar({ analytics: { id: "G-0SDL9ZF6SC" } })
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        quietDeps: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
