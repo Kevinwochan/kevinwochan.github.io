@@ -11,7 +11,7 @@ function App() {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    const sectionIds = ["about", "gallery"];
+    const sectionIds = ["about", "gallery", "talks"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
@@ -22,22 +22,16 @@ function App() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
-
-        if (visibleEntries.length === 0) {
-          return;
-        }
-
-        const mostVisible = visibleEntries.reduce((best, current) =>
-          current.intersectionRatio > best.intersectionRatio ? current : best
-        );
-
-        setActiveSection(mostVisible.target.id);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
       },
       {
         root: null,
-        rootMargin: "-20% 0px -40% 0px",
-        threshold: [0.15, 0.35, 0.55, 0.75],
+        rootMargin: "-30% 0px -50% 0px",
+        threshold: 0,
       }
     );
 
@@ -48,24 +42,19 @@ function App() {
     };
   }, []);
 
+  const navClass = (id: string) =>
+    `side-nav__link${activeSection === id ? " is-active" : ""}`;
+
   return (
     <div className="app-shell">
       <nav className="side-nav">
-        <a
-          className={`side-nav__link ${activeSection === "about" ? "is-active" : ""
-            }`}
-          href="#about"
-        >
+        <a className={navClass("about")} href="#about">
           About
         </a>
-        <a
-          className={`side-nav__link ${activeSection === "gallery" ? "is-active" : ""
-            }`}
-          href="#gallery"
-        >
+        <a className={navClass("gallery")} href="#gallery">
           Gallery
         </a>
-        <a className="side-nav__link" href="#talks">
+        <a className={navClass("talks")} href="#talks">
           Talks
         </a>
       </nav>
