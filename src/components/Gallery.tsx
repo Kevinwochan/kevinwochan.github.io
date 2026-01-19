@@ -38,7 +38,7 @@ export const Gallery = ({}) => {
   ];
 
   return (
-    <section className="resume-section container">
+    <section id="gallery" className="resume-section container">
       <FullHeightRow className="d-flex align-items-center justify-content-center">
         <div style={{ maxHeight: "80vh" }}>
           <ImageGallery items={images} startIndex={slide} />

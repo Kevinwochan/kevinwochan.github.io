@@ -39,7 +39,7 @@ const TALKS = [
 ]
 
 export const Presentations = () => (
-  <section className="resume-section container">
+  <section id="talks" className="resume-section container">
     <FullHeightRow className="d-flex flex-column justify-content-center row text-center">
       <h1 className="flex-item">Previous Talks</h1>
       <div className="row flex-item">
