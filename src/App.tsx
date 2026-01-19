@@ -52,17 +52,15 @@ function App() {
     <div className="app-shell">
       <nav className="side-nav">
         <a
-          className={`side-nav__link ${
-            activeSection === "about" ? "is-active" : ""
-          }`}
+          className={`side-nav__link ${activeSection === "about" ? "is-active" : ""
+            }`}
           href="#about"
         >
           About
         </a>
         <a
-          className={`side-nav__link ${
-            activeSection === "gallery" ? "is-active" : ""
-          }`}
+          className={`side-nav__link ${activeSection === "gallery" ? "is-active" : ""
+            }`}
           href="#gallery"
         >
           Gallery
