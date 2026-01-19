@@ -40,22 +40,24 @@ const TALKS = [
 
 export const Presentations = () => (
   <section id="talks" className="resume-section container">
-    <FullHeightRow className="d-flex flex-column justify-content-center row text-center">
+    <FullHeightRow className="d-flex flex-column justify-content-center row text-center section-inner">
       <h1 className="flex-item">Previous Talks</h1>
       <div className="row flex-item">
         {TALKS.map(talk => (
-          <div className="col-sm-12 col-md-6">
-            <iframe
-              loading="lazy"
-              className="d-block m-auto"
-              style={{ minHeight: "30vh", width: "100%", aspectRatio: "16/9" }}
-              src={talk.embed}
-              allowFullScreen
-              allow="fullscreen"
-            ></iframe>
-            <a href={talk.link} target="_blank" rel="noopener">
-              {talk.title}
-            </a>
+          <div className="col-sm-12 col-md-6 talk-card">
+            <div className="section-card">
+              <iframe
+                loading="lazy"
+                className="d-block m-auto"
+                style={{ minHeight: "30vh", width: "100%", aspectRatio: "16/9" }}
+                src={talk.embed}
+                allowFullScreen
+                allow="fullscreen"
+              ></iframe>
+              <a href={talk.link} target="_blank" rel="noopener">
+                {talk.title}
+              </a>
+            </div>
           </div>
         ))}
       </div>

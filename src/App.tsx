@@ -11,7 +11,7 @@ function App() {
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
-    const sectionIds = ["about", "gallery", "talks"];
+    const sectionIds = ["about", "gallery"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
@@ -22,16 +22,22 @@ function App() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+
+        if (visibleEntries.length === 0) {
+          return;
+        }
+
+        const mostVisible = visibleEntries.reduce((best, current) =>
+          current.intersectionRatio > best.intersectionRatio ? current : best
+        );
+
+        setActiveSection(mostVisible.target.id);
       },
       {
         root: null,
-        rootMargin: "0px",
-        threshold: 0.55,
+        rootMargin: "-20% 0px -40% 0px",
+        threshold: [0.15, 0.35, 0.55, 0.75],
       }
     );
 
@@ -61,12 +67,7 @@ function App() {
         >
           Gallery
         </a>
-        <a
-          className={`side-nav__link ${
-            activeSection === "talks" ? "is-active" : ""
-          }`}
-          href="#talks"
-        >
+        <a className="side-nav__link" href="#talks">
           Talks
         </a>
       </nav>

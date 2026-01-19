@@ -70,8 +70,8 @@ const About = () => {
 
   return (
     <section id="about" className="resume-section container">
-      <FullHeightRow className="d-md-flex align-items-center justify-content-center">
-        <div className="d-none d-lg-block d-flex-item">
+      <FullHeightRow className="d-md-flex align-items-center justify-content-center section-inner about-layout">
+        <div className="d-none d-lg-block d-flex-item profile-column">
           <img
             style={{
               height: 200,
@@ -94,7 +94,7 @@ const About = () => {
             </IconButton>
           </div>
         </div>
-        <div className="p-5 d-flex-item">
+        <div className="p-5 d-flex-item about-card">
           <img
             style={{
               height: 200,
@@ -119,7 +119,7 @@ const About = () => {
               With a passion for information security and software architecture.
             </p>
           </div>
-          <div className="subheading icons ml-1">
+          <div className="subheading icons ml-1 badge-grid">
             {badges.map((badge) => (
               <a href={badge.cert}>
                 <img

@@ -7,7 +7,7 @@ const FullHeightRow = styled.div`
   height: 100vh;
 `;
 
-export const Gallery = ({}) => {
+export const Gallery = () => {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
@@ -39,8 +39,9 @@ export const Gallery = ({}) => {
 
   return (
     <section id="gallery" className="resume-section container">
-      <FullHeightRow className="d-flex align-items-center justify-content-center">
-        <div style={{ maxHeight: "80vh" }}>
+      <FullHeightRow className="d-flex flex-column align-items-center justify-content-center section-inner">
+        <h1 className="mb-4">Gallery</h1>
+        <div className="section-card gallery-card">
           <ImageGallery items={images} startIndex={slide} />
         </div>
       </FullHeightRow>
