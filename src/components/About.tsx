@@ -1,22 +1,5 @@
 import styled from "styled-components";
 
-const IconButton = styled.a`
-  display: inline-block;
-  font-size: 3rem;
-  margin-right: 2rem;
-  border-radius: 100%;
-
-  & i {
-    height: 3rem;
-    transition: 0.5s ease-in-out;
-    color: white;
-  }
-
-  &:hover i {
-    color: #81a1c1;
-  }
-`;
-
 const FullHeightRow = styled.div`
   overflow-y: hidden;
   min-height: 90vh;
