@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styled from "styled-components";
 
 const IconButton = styled.a`
@@ -24,7 +23,6 @@ const FullHeightRow = styled.div`
 `;
 
 const About = () => {
-  const [msg, setMsg] = useState("");
 
   const badges = [
     {
@@ -64,10 +62,6 @@ const About = () => {
     },
   ];
 
-  setTimeout(() => {
-    setMsg("Pssst! You're still here?");
-  }, 30000);
-
   return (
     <section id="about" className="resume-section container">
       <FullHeightRow className="d-md-flex align-items-center justify-content-center section-inner about-layout">
@@ -80,19 +74,6 @@ const About = () => {
             src="../kevin.jpeg"
             alt="Kevin Chan"
           />
-          <div className="subheading icons text-left my-3">
-            <IconButton href="https://linkedin.com/in/kevinwochan/">
-              <i
-                className="bi bi-linkedin"
-                onClick={() => {
-                  setMsg("Talk to you soon....");
-                }}
-              />
-            </IconButton>
-            <IconButton href="https://github.com/Kevinwochan">
-              <i className="bi bi-github" />
-            </IconButton>
-          </div>
         </div>
         <div className="p-5 d-flex-item about-card">
           <img
@@ -131,8 +112,6 @@ const About = () => {
               </a>
             ))}
           </div>
-
-          {msg}
         </div>
       </FullHeightRow>
       <i
