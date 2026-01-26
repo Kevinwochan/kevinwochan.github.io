@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import ImageGallery from "react-image-gallery";
 import styled from "styled-components";
 import "../../node_modules/react-image-gallery/styles/css/image-gallery.css";
@@ -7,14 +6,7 @@ const FullHeightRow = styled.div`
   height: 100vh;
 `;
 
-export const Gallery = () => {
-  const [slide, setSlide] = useState(0);
-
-  useEffect(() => {
-    setSlide(0);
-  }, []);
-
-  const images = [
+const images = [
     {
       original: "./events/EDA Sydney Serverless.jpg",
       thumbnail: "./events/EDA Sydney Serverless.jpg",
@@ -35,16 +27,15 @@ export const Gallery = () => {
       original: "./events/Infrastrucure as Code with AWS CDK.jpg",
       thumbnail: "./events/Infrastrucure as Code with AWS CDK.jpg",
     },
-  ];
+];
 
-  return (
-    <section id="gallery" className="resume-section container">
-      <FullHeightRow className="d-flex flex-column align-items-center justify-content-center section-inner">
-        <h1 className="section-title">Gallery</h1>
-        <div className="section-card gallery-card">
-          <ImageGallery items={images} startIndex={slide} />
-        </div>
-      </FullHeightRow>
-    </section>
-  );
-};
+export const Gallery = () => (
+  <section id="gallery" className="resume-section container">
+    <FullHeightRow className="d-flex flex-column align-items-center justify-content-center section-inner">
+      <h1 className="section-title">Gallery</h1>
+      <div className="section-card gallery-card">
+        <ImageGallery items={images} />
+      </div>
+    </FullHeightRow>
+  </section>
+);

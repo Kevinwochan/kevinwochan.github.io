@@ -8,10 +8,9 @@ const TALKS = [
   {
     title: "Cloud Crafting with Python",
     link: "https://www.canva.com/design/DAGkadArudk/3Xp0r_QZ2HDECrTV4FCQxA/view?utm_content=DAGkadArudk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb57d999854",
-    embed: "https://www.canva.com/design/DAGkadArudk/B3eyEvdsErt8E9nH97_Yjw/view?embed"
+    embed: "https://www.canva.com/design/DAGkadArudk/B3eyEvdsErt8E9nH97_Yjw/view?embed",
   },
   {
-
     title: "WTF Python",
     link: "https://www.canva.com/design/DAGYYPCuLQc/OcAQsVtpWemU4zpFV2AAOg/view?utm_content=DAGYYPCuLQc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8e07f7599b",
     embed: "https://www.canva.com/design/DAGYYPCuLQc/ptlibrk4qk8trQcS1MIaqA/view?embed",
@@ -35,16 +34,16 @@ const TALKS = [
     title: "Google Chrome Theme",
     link: "https://www.canva.com/design/DAEbvD9bQFU/VEyR1ecEVeHCrNtcBSCMmw/view?utm_content=DAEbvD9bQFU&utm_campaign=designshare&utm_medium=embeds&utm_source=link",
     embed: "https://www.canva.com/design/DAEbvD9bQFU/VEyR1ecEVeHCrNtcBSCMmw/view?embed",
-  }
-]
+  },
+];
 
 export const Presentations = () => (
   <section id="talks" className="resume-section container">
     <FullHeightRow className="d-flex flex-column justify-content-center row text-center section-inner">
       <h1 className="flex-item section-title">Previous Talks</h1>
       <div className="row flex-item">
-        {TALKS.map(talk => (
-          <div className="col-sm-12 col-md-6 talk-card">
+        {TALKS.map((talk) => (
+          <div key={talk.title} className="col-sm-12 col-md-6 talk-card">
             <div className="section-card">
               <iframe
                 loading="lazy"
@@ -64,4 +63,3 @@ export const Presentations = () => (
     </FullHeightRow>
   </section>
 );
-

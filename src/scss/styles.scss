@@ -7,20 +7,84 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
 
-body {
-  font-family: 'Source Sans Pro', sans-serif;
-  background-color: #2b3142;
-  background-image:
-    linear-gradient(135deg,
+:root {
+  // Dark theme (default)
+  --bg-color: #2b3142;
+  --bg-gradient: linear-gradient(
+      135deg,
       rgba(136, 192, 208, 0.22) 0%,
       rgba(43, 49, 66, 0.15) 40%,
-      rgba(214, 162, 197, 0.22) 100%),
-    radial-gradient(circle at 20% 20%, rgba(163, 211, 238, 0.2), transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(136, 192, 208, 0.18), transparent 50%);
+      rgba(214, 162, 197, 0.22) 100%
+    ),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(163, 211, 238, 0.2),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(136, 192, 208, 0.18),
+      transparent 50%
+    );
+  --text-color: #d8dee9;
+  --text-muted: #a0a8b8;
+  --heading-color: #ffffff;
+  --link-color: #81a1c1;
+  --link-hover: #88c0d0;
+  --nav-link: #eceff4;
+  --nav-active-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(16, 20, 30, 0.7);
+  --card-shadow: rgba(8, 12, 22, 0.45);
+  --card-shadow-hover: rgba(8, 12, 22, 0.5);
+  --subheading-color: #81a1c1;
+  --hr-color: #2e3440;
+  --toggle-bg: rgba(255, 255, 255, 0.1);
+  --toggle-icon: #eceff4;
+}
+
+:root[data-theme="light"] {
+  --bg-color: #e8ecf2;
+  --bg-gradient: linear-gradient(
+      135deg,
+      rgba(136, 192, 208, 0.3) 0%,
+      rgba(220, 225, 235, 0.2) 40%,
+      rgba(214, 162, 197, 0.25) 100%
+    ),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(163, 211, 238, 0.25),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(136, 192, 208, 0.22),
+      transparent 50%
+    );
+  --text-color: #2e3440;
+  --text-muted: #4c566a;
+  --heading-color: #2e3440;
+  --link-color: #5e81ac;
+  --link-hover: #4c6b8a;
+  --nav-link: #2e3440;
+  --nav-active-bg: rgba(0, 0, 0, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-shadow: rgba(46, 52, 64, 0.15);
+  --card-shadow-hover: rgba(46, 52, 64, 0.22);
+  --subheading-color: #5e81ac;
+  --hr-color: #d8dee9;
+  --toggle-bg: rgba(0, 0, 0, 0.08);
+  --toggle-icon: #2e3440;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #D8DEE9;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -48,36 +112,59 @@ html {
   z-index: 10;
 }
 
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--toggle-bg);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
+
+.theme-toggle i {
+  font-size: 1.25rem;
+  color: var(--toggle-icon);
+  transition: color 0.2s ease;
+}
+
 .side-nav__link {
-  color: #ECEFF4;
+  color: var(--nav-link);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease, background 0.2s ease;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
 }
 
 .side-nav__link:hover,
 .side-nav__link:focus {
-  color: #88C0D0;
+  color: var(--link-hover);
 }
 
 .side-nav__link.is-active {
-  color: #88C0D0;
+  color: var(--link-hover);
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--nav-active-bg);
   backdrop-filter: blur(12px);
 }
 
-
 .app-content {
   width: 100%;
-}
-
-.navbar-nav {
-  font-family: 'Archivo Narrow';
 }
 
 h1,
@@ -86,10 +173,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Julius Sans One';
+  font-family: "Julius Sans One";
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: var(--heading-color);
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
 }
 
 h1 {
@@ -106,13 +194,16 @@ p.lead {
   font-weight: 400;
   margin: 0;
   line-height: 1.7;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .subheading {
   font-weight: 500;
-  font-family: 'Archivo Narrow';
+  font-family: "Archivo Narrow";
   font-size: 1.5rem;
-  color: #81A1C1;
+  color: var(--subheading-color);
+  transition: color 0.3s ease;
 }
 
 section.resume-section {
@@ -126,17 +217,17 @@ section.resume-section {
 }
 
 .section-card {
-  background: rgba(16, 20, 30, 0.7);
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 0 18px 40px rgba(8, 12, 22, 0.45);
+  box-shadow: 0 18px 40px var(--card-shadow);
   backdrop-filter: blur(18px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
 }
 
 .section-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 54px rgba(8, 12, 22, 0.5);
+  box-shadow: 0 24px 54px var(--card-shadow-hover);
 }
 
 .about-layout {
@@ -152,10 +243,11 @@ section.resume-section {
 }
 
 .about-card {
-  background: rgba(16, 20, 30, 0.65);
+  background: var(--card-bg);
   border-radius: 20px;
-  box-shadow: 0 16px 32px rgba(8, 12, 22, 0.4);
+  box-shadow: 0 16px 32px var(--card-shadow);
   backdrop-filter: blur(18px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .badge-grid {
@@ -192,21 +284,8 @@ section.resume-section {
 }
 
 hr {
-  border-color: #2E3440;
-}
-
-#sideNav {
-  display: none;
-}
-
-#sideNav .navbar-nav .nav-item .nav-link {
-  font-weight: 800;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase;
-}
-
-#sideNav .navbar-toggler:focus {
-  outline-color: white;
+  border-color: var(--hr-color);
+  transition: border-color 0.3s ease;
 }
 
 .img-profile {
@@ -217,52 +296,24 @@ hr {
   width: 200px;
 }
 
-section.resume-section .resume-item .resume-date {
-  min-width: none;
-}
-
-.bg-dark {
-  background-color: #242933 !important;
-}
-
 .text-secondary {
-  color: #D8DEE9 !important;
+  color: var(--text-muted) !important;
 }
 
 .text-primary {
-  color: #ECEFF4 !important;
+  color: var(--text-color) !important;
 }
 
 a {
-  color: #81A1C1;
+  color: var(--link-color);
+  transition: color 0.2s ease;
 }
 
 a:hover,
 a:focus,
 a:active {
-  color: #88C0D0;
+  color: var(--link-hover);
 }
-
-
-@keyframes AnimateSplash {
-  0% {
-    background-position: 0% 10%;
-  }
-
-  50% {
-    background-position: 50% 50%;
-  }
-
-  100% {
-    background-position: 0% 10%;
-  }
-}
-
-.bright {
-  animation: AnimateSplash 1.5s ease infinite;
-  background-image: linear-gradient(135deg, rgb(163, 211, 238), rgb(214, 162, 197));
-}
-
 
 .image-gallery {
   max-width: 100%;
@@ -270,38 +321,18 @@ a:active {
   max-height: 80vh;
 }
 
-@keyframes down {
-  0% {
-    margin-bottom: 0;
-  }
-
-  50% {
-    margin-bottom: 1%;
-  }
-
-  100% {
-    margin-bottom: 0;
-  }
-}
-
-/* Extra small devices (xs): No media query needed since this is default */
 @media (max-width: 991.98px) {
   section.resume-section {
     padding-top: 0;
   }
 }
 
-/* Small devices (sm, ≥576px) */
-@media (min-width: 576px) {}
-
-/* Medium devices (md, ≥768px) */
 @media (min-width: 768px) {
   .image-gallery {
     max-width: 70%;
   }
 }
 
-/* Large devices (lg, ≥992px) */
 @media (min-width: 992px) {
   .app-shell {
     flex-direction: row;
@@ -314,7 +345,6 @@ a:active {
     bottom: 0;
     width: 160px;
     padding: 2rem 1.5rem;
-    display: flex;
     flex-direction: column;
   }
 
@@ -326,9 +356,3 @@ a:active {
     scroll-margin-top: 1.5rem;
   }
 }
-
-/* Extra large devices (xl, ≥1200px) */
-@media (min-width: 1200px) {}
-
-/* Extra extra large devices (xxl, ≥1400px) */
-@media (min-width: 1400px) {}

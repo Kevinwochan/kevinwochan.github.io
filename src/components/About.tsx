@@ -5,9 +5,7 @@ const FullHeightRow = styled.div`
   min-height: 90vh;
 `;
 
-const About = () => {
-
-  const badges = [
+const badges = [
     {
       img: "./badges/CKA.png",
       alt: "Certified Kubernetes Administrator",
@@ -43,9 +41,9 @@ const About = () => {
       alt: "Basic Quantum Computing",
       cert: "https://www.credly.com/badges/9c9147f1-a391-44fa-97b5-c54cd034fd78/public_url",
     },
-  ];
+];
 
-  return (
+const About = () => (
     <section id="about" className="resume-section container">
       <FullHeightRow className="d-md-flex align-items-center justify-content-center section-inner about-layout">
         <div className="d-none d-lg-block d-flex-item profile-column">
@@ -83,9 +81,9 @@ const About = () => {
               With a passion for information security and software architecture.
             </p>
           </div>
-          <div className="subheading icons ml-1 badge-grid">
+          <div className="badge-grid">
             {badges.map((badge) => (
-              <a href={badge.cert}>
+              <a key={badge.alt} href={badge.cert}>
                 <img
                   src={badge.img}
                   alt={badge.alt}
@@ -97,17 +95,7 @@ const About = () => {
           </div>
         </div>
       </FullHeightRow>
-      <i
-        className="bi bi-arrow-down-short h1 position-absolute"
-        style={{
-          bottom: "0",
-          left: "50%",
-          animation: "down 2s infinite",
-          fontSize: "4rem",
-        }}
-      />
     </section>
-  );
-};
+);
 
 export default About;

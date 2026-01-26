@@ -9,6 +9,19 @@ import { Presentations } from "./components/Presentations";
 
 function App() {
   const [activeSection, setActiveSection] = useState("about");
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    const stored = localStorage.getItem("theme");
+    return stored === "light" ? "light" : "dark";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   useEffect(() => {
     const sectionIds = ["about", "gallery", "talks"];
@@ -47,6 +60,13 @@ function App() {
 
   return (
     <div className="app-shell">
+      <button
+        className="theme-toggle"
+        onClick={toggleTheme}
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+      >
+        <i className={`bi ${theme === "dark" ? "bi-sun" : "bi-moon"}`} />
+      </button>
       <nav className="side-nav">
         <a className={navClass("about")} href="#about">
           About
