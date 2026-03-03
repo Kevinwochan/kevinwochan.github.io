@@ -60,23 +60,25 @@ function App() {
 
   return (
     <div className="app-shell">
-      <button
-        className="theme-toggle"
-        onClick={toggleTheme}
-        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      >
-        <i className={`bi ${theme === "dark" ? "bi-sun" : "bi-moon"}`} />
-      </button>
       <nav className="side-nav">
-        <a className={navClass("about")} href="#about">
-          About
-        </a>
-        <a className={navClass("gallery")} href="#gallery">
-          Gallery
-        </a>
-        <a className={navClass("talks")} href="#talks">
-          Talks
-        </a>
+        <div className="side-nav__links">
+          <a className={navClass("about")} href="#about">
+            About
+          </a>
+          <a className={navClass("gallery")} href="#gallery">
+            Gallery
+          </a>
+          <a className={navClass("talks")} href="#talks">
+            Talks
+          </a>
+        </div>
+        <button
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          <i className={`bi ${theme === "dark" ? "bi-sun" : "bi-moon"}`} />
+        </button>
       </nav>
       <main className="app-content">
         <About />
