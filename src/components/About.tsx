@@ -73,12 +73,15 @@ const About = () => (
             BSc Computer Science (Major in Security Engineering) - The
             University of New South Wales
           </div>
-          <div className="lead mb-4">
-            <p className="lead">
-              A builder, tinkerer and engineer at heart.
+          <div className="mb-4" style={{ fontSize: "0.95rem", lineHeight: "1.6" }}>
+            <p className="mb-2">
+              Software Engineer with a background spanning AWS, defence, and early-stage startups.
             </p>
-            <p className="lead">
-              With a passion for information security and software architecture.
+            <p className="mb-2">
+              At AWS I worked as a Solutions Architect, helping software companies design and migrate cloud infrastructure at scale. Before that I built systems in high-compliance defence environments and wore many hats across the full stack at startups.
+            </p>
+            <p className="mb-0">
+              These days I'm focused on agentic AI — building orchestration systems that coordinate autonomous agents to solve complex, multi-step problems. I'm drawn to the infrastructure and reliability challenges that emerge when AI systems need to act, not just respond.
             </p>
           </div>
           <div className="badge-grid">
